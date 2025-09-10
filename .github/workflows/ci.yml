@@ -20,5 +20,5 @@ jobs:
     - name: Build the Docker image
       run: docker build -t cicd-gh .
     - name: Push to Dockerhub
-      run: docker push loh21/cicd-gh:latest
+      run: docker push loalan14997/cicd-gh:latest
     
