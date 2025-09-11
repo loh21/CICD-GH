@@ -14,8 +14,8 @@ jobs:
 
     steps:
     - name: Pull Docker image
-      run: docker pull ${{ secrets.DOCKER_USERNAME }}/cicd-gh:latest
+      run: sudo docker pull ${{ secrets.DOCKER_USERNAME }}/cicd-gh:latest
     - name: Delete Old Docker container
-      run: docker rm -f cicd-gh-container || true
+      run: sudo docker rm -f cicd-gh-container || true
     - name: Run Docker container
-      run: docker run -d -p 8080:8080 --name cicd-gh-container ${{ secrets.DOCKER_USERNAME }}/cicd-gh
+      run: sudo docker run -d -p 8080:8080 --name cicd-gh-container ${{ secrets.DOCKER_USERNAME }}/cicd-gh
